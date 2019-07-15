@@ -1,0 +1,6 @@
+/vendor
+/.idea
+/public/.htaccess
+Homestead.json
+Homestead.yaml
+.env
