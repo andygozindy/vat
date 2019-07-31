@@ -95,7 +95,7 @@ class MTDController extends Controller
 
         if(!isset($error)){
             $this->accessToken($code);
-            return redirect('https://google.co.uk');
+            return redirect($this->redirect);
         }else{//Fail getting auth code
             //return "failed";
         }
