@@ -93,10 +93,13 @@ class MTDController extends Controller
         $error_description = $request->get('error_description');
         $error_code = $request->get('error_code');
 
+        Log::info('callback');
+
         if(!isset($error)){
+            Log::info('no error');
             $this->accessToken($code);
-            echo $this->redirect;exit;
-            //return redirect($this->redirect);
+            Log::info('everything done so should redirect here: '. $this->redirect);
+            return redirect($this->redirect);
         }else{//Fail getting auth code
             //return "failed";
         }
@@ -118,6 +121,7 @@ class MTDController extends Controller
         if(isset($data->error)){
             $this->debug['accessToken'] = 'error';
         }else{
+            Log::info('access token before send to store data');
             $this->storeData($data);
         }
     }
@@ -149,6 +153,7 @@ class MTDController extends Controller
         $t->scope = $data->scope;
         $t->token_type = $data->token_type;
         $t->save();
+        Log::info('stored the data');
     }
 
     public function getCredentials()
