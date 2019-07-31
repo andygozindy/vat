@@ -98,7 +98,7 @@ class MTDController extends Controller
         if(!isset($error)){
             Log::info('no error');
             $this->accessToken($code);
-            Log::info('everything done so should redirect here: '. $this->redirect);
+            Log::info('everything done so should redirect here: '. $this->local_domain);
             return redirect($this->redirect);
         }else{//Fail getting auth code
             //return "failed";
