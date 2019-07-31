@@ -94,8 +94,9 @@ class MTDController extends Controller
         $error_code = $request->get('error_code');
 
         if(!isset($error)){
+// /            print_r($request->all());
             $this->accessToken($code);
-            return $this->redirect;
+            return \Redirect::to($this->redirect);
         }else{//Fail getting auth code
             //return "failed";
         }
