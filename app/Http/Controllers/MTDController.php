@@ -95,7 +95,6 @@ class MTDController extends Controller
 
         if(!isset($error)){
             $this->accessToken($code);
-            return redirect($this->redirect);
         }else{//Fail getting auth code
             //return "failed";
         }
@@ -109,7 +108,7 @@ class MTDController extends Controller
         $extraParams->client_secret = config('extra_config.client_secret');
         $extraParams->client_id = config('extra_config.client_id');
         $extraParams->grant_type = 'authorization_code';
-        $extraParams->redirect_uri = $this->local_domain.'/callback';
+        $extraParams->redirect_uri = $this->redirect;
         $extraParams->code = $code;
         $this->connect($this->remote_domain_test."/oauth/token", 'POST', 'null', $extraParams);
         $data = json_decode($this->debug['body']);
