@@ -95,6 +95,7 @@ class MTDController extends Controller
 
         if(!isset($error)){
             $this->accessToken($code);
+            return $this->redirect;
         }else{//Fail getting auth code
             //return "failed";
         }
