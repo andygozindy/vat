@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                // 
+                sh 'vendor/bin/phpunit'
             }
         }
         stage('Deploy') { 
