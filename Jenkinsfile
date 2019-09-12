@@ -1,22 +1,23 @@
 pipeline {
-    agent any 
-    stages {
-	stage('cleanup') {
-	    // Recursively delete all files and folders in the workspace
-            // using the built-in pipeline command
-            // deleteDir()
-	}
-        stage('build') {
-            //checkout scm
+    agent any
 
-            //sh "composer install"
-            //sh "cp .env.example .env"
-            //sh "php artisan key:generate"
-        }
-        stage('Test') { 
+    stages {
+        stage('Build') {
             steps {
-                sh 'vendor/bin/phpunit'
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
 }
+
+
