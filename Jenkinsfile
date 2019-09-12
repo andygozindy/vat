@@ -4,14 +4,14 @@ pipeline {
 	stage('cleanup') {
 	    // Recursively delete all files and folders in the workspace
             // using the built-in pipeline command
-            deleteDir()
+            // deleteDir()
 	}
         stage('build') {
-            checkout scm
+            //checkout scm
 
-            sh "composer install"
-            sh "cp .env.example .env"
-            sh "php artisan key:generate"
+            //sh "composer install"
+            //sh "cp .env.example .env"
+            //sh "php artisan key:generate"
         }
         stage('Test') { 
             steps {
