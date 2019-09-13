@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+	docker:{
+	    image '7.2-fpm'
+	    label 'jf-php'
+	}
+    }
 
     stages {
         stage('Build') {
