@@ -1,6 +1,7 @@
+//do not use this, still learning ;-)
 pipeline {
     agent {
-	docker:{
+	docker{
 	    image '7.2-fpm'
 	    label 'jf-php'
 	}
