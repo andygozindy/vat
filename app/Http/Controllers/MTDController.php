@@ -54,7 +54,7 @@ class MTDController extends Controller
         $this->local_domain = config('extra_config.domain');//set this in your .env file
         $this->remote_domain_live = 'https://api.service.hmrc.gov.uk';
         $this->remote_domain_test = 'https://test-api.service.hmrc.gov.uk';
-        $this->remote_domain = $this->remote_domain_live;
+        $this->remote_domain = $this->remote_domain_test;
         $this->redirect = config('extra_config.redirect_domain');//where to redirect after callback success
 	    $this->debug = array();
     }
